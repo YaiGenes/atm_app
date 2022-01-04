@@ -5,20 +5,6 @@ using namespace std;
 
 import utils;
 
-void noFounds()
-{
-  cout << "Insufficient funds" << endl;
-  cout << "\n"
-       << endl;
-}
-
-void currentBalance(int balance)
-{
-  cout << "Your current balance is " << balance << " euros" << endl;
-  cout << "\n"
-       << endl;
-}
-
 int main()
 {
   //check balance, deposit, withdraw, show menu
@@ -39,7 +25,7 @@ int main()
     switch (choice)
     {
     case 1:
-      currentBalance(balance);
+      utils::currentBalance(balance);
       break;
     case 2:
       cout << "Deposit amount " << endl;
@@ -55,11 +41,11 @@ int main()
       if (withdraw <= balance)
       {
         balance -= withdraw;
-        currentBalance(balance);
+        utils::currentBalance(balance);
       }
       else
       {
-        noFounds();
+        utils::noFounds();
       }
       break;
     case 4:
@@ -71,11 +57,11 @@ int main()
       {
         balance -= send;
         cout << name << " received " << send << " euros" << endl;
-        currentBalance(balance);
+        utils::currentBalance(balance);
       }
       else
       {
-        noFounds();
+        utils::noFounds();
       }
       break;
     default:
