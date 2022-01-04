@@ -3,27 +3,7 @@
 
 using namespace std;
 
-void login()
-{
-  string name;
-  string password;
-  const string pass = "123";
-  cout << "***********LOGIN***********" << endl;
-  cout << "Please, introduce your username: " << endl;
-  cin >> name;
-  do
-  {
-    cout << "Introduce a valid password " << endl;
-    cin >> password;
-    cout << "***************************" << endl;
-    if (password != pass)
-    {
-      system("cls");
-      cout << "Wrong password!!!" << endl;
-    }
-  } while (password != pass);
-  cout << "Welcome " << name << endl;
-}
+import utils;
 
 void noFounds()
 {
@@ -39,17 +19,6 @@ void currentBalance(int balance)
        << endl;
 }
 
-void showMenu()
-{
-  cout << "***********MENU***********" << endl;
-  cout << "1. Check Balance" << endl;
-  cout << "2. Deposit" << endl;
-  cout << "3. Withdraw" << endl;
-  cout << "4. Send" << endl;
-  cout << "5. Exit" << endl;
-  cout << "***************************" << endl;
-}
-
 int main()
 {
   //check balance, deposit, withdraw, show menu
@@ -60,10 +29,10 @@ int main()
   double send;
   string name;
 
-  login();
+  utils::login();
   do
   {
-    showMenu();
+    utils::showMenu();
     cout << "Please, enter your choice: ";
     cin >> choice;
     system("cls");
